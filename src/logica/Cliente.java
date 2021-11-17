@@ -7,16 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 //clase entidad, relacion o tabla en base de datos
 @Entity
 public class Cliente implements Serializable {
     
     //declaracion de atributos de la clase
-    //primary key
+    //primary key y generador de secuencia de autoincremento en 1
+    @SequenceGenerator(name="incrementoEnUno", allocationSize=1)
     @Id
-    //autoincremental
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //autoincremental secuenciado en generador de secuencia
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="incrementoEnUno")
     private int idCliente;
     //atributos o campos
     @Basic

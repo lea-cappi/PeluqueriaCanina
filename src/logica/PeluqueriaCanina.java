@@ -8,8 +8,21 @@ public class PeluqueriaCanina {
     public static void main(String[] args) {
         //llamada a la controladora de logica
         Controladora control = new Controladora ();
-        //prueba instanciando un cliente
-        Cliente cli = new Cliente (1, 3241,"Leyla", "Terbal", "Castano", "false", "false", "Leandro", "2345234", "La mas bella del mundo");
+        //prueba creando un cliente mediante constructor vacio para testear idCliente
+        Cliente cli = new Cliente ();
+        //seteo de atributos
+        cli.setNumCliente(7635);
+        cli.setNombrePerro("Wimpy");
+        cli.setRaza("Cooker");
+        cli.setColor("Blanco y negro");
+        cli.setAlergico("true");
+        cli.setAtencionEsp("true");
+        cli.setNombreDuenio("Monica");
+        cli.setCelDuenio("642345");
+        cli.setObservaciones("Medio insoportable diria un tuerto");
+        
+        
+        //llamada a controladora
         control.altaCliente(cli);
         
     }
