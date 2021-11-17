@@ -21,10 +21,11 @@ public class ClienteJpaController implements Serializable {
     }
     private EntityManagerFactory emf = null;
     
+    //metodo constructor que setea entidad que manejara a los elementos que entren en la persistencia
     public ClienteJpaController() {
         emf = Persistence.createEntityManagerFactory("PeluqueriaCaninaPU");
     }
-
+    
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
