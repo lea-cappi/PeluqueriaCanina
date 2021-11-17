@@ -10,7 +10,12 @@ public class ControladoraPersistencia {
     
     //metodo de alta
     public void altaCliente (Cliente cli) {
-        cliJPA.create(cli);
+        try {
+            cliJPA.create(cli);
+        }
+        catch (Exception e) {
+            System.out.println("No se pudo crear el cliente.");
+        }
     
     }
     
